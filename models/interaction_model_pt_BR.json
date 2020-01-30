@@ -1,0 +1,268 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "calculadora de gravidez",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "WeeksToMonths",
+          "slots": [
+            {
+              "name": "weeks",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "Estou com {weeks}",
+                "Estou com {weeks} semanas",
+                "Estou grávida de {weeks}",
+                "{weeks}"
+              ]
+            }
+          ],
+          "samples": [
+            "quanto dá {weeks} semanas de gravidez em meses",
+            "quanto dá {weeks} semanas de gravidez",
+            "converte {weeks} semanas de gravidez para meses",
+            "{weeks} semanas dá quantos meses",
+            "Quanto dá {weeks} semanas em meses",
+            "Quantas meses é {weeks} semanas",
+            "Quantos meses é {weeks} semanas de gravidez",
+            "Estou com {weeks} Quantos meses estou",
+            "Qual mês está minha gravidez",
+            "Estou gravida de quantos meses",
+            "Quantos meses estou gravida",
+            "Quantos meses eu estou",
+            "Convente semanas para meses",
+            "Conventer semanas para meses"
+          ]
+        },
+        {
+          "name": "ConceptionIntent",
+          "slots": [
+            {
+              "name": "dueDate",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "é {dueDate}",
+                "dia {dueDate}",
+                "em {dueDate} se não me engano",
+                "será em {dueDate}",
+                "em {dueDate}",
+                "{dueDate}"
+              ]
+            }
+          ],
+          "samples": [
+            "quando meu bebê foi gerado",
+            "quero descobrir a data que minha filha foi feita",
+            "quero descobrir a data que minha filha foi concebida",
+            "quero descobrir a data que minha filha foi gerada",
+            "quero descobrir a data que meu filho foi concebido",
+            "quero descobrir a data que meu filho foi feito",
+            "quero descobrir a data que meu filho foi criado",
+            "quero descobrir a data que meu filho foi gerado",
+            "quero descobrir a data que meu bebê foi concebido",
+            "quero descobrir a data que minha bebê foi concebido",
+            "quero descobrir a data que meu bebê foi criado",
+            "quero descobrir a data que minha bebê foi criado",
+            "quero descobrir a data que meu bebê foi gerado",
+            "quero descobrir a data que minha bebê foi gerado",
+            "quando minha filha foi criada",
+            "quando meu filho foi criado",
+            "quando meu bebê foi criado",
+            "quando minha bebê foi criada",
+            "que dia meu bebê foi criado",
+            "que dia minha bebê foi criada",
+            "que dia meu filho foi criado",
+            "que dia minha filha foi criada",
+            "quando minha filha foi concebida",
+            "quando meu filho foi concebido",
+            "quando meu bebê foi concebido",
+            "quando minha bebê foi concebida",
+            "quando meu bebê foi gerado",
+            "quando minha bebê foi gerada",
+            "quando minha filha foi gerada",
+            "quando meu filho foi gerado",
+            "quando meu filho foi feito",
+            "quando que minha filha foi feita",
+            "quando foi a data da concepção",
+            "qual foi a concepção",
+            "qual foi a concepção do meu bebe",
+            "qual foi a concepção da minha bebe",
+            "quando meu bebê foi feito",
+            "quando minha bebê foi feito",
+            "quando foi que meu bebê foi feito",
+            "quando foi que minha bebê foi feita",
+            "quando foi a concepção",
+            "Qual a data da concepção"
+          ]
+        },
+        {
+          "name": "DueDateIntent",
+          "slots": [
+            {
+              "name": "lastMenstrualPeriod",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "foi {lastMenstrualPeriod}",
+                "foi dia {lastMenstrualPeriod}",
+                "dia {lastMenstrualPeriod}",
+                "em {lastMenstrualPeriod}",
+                "acho que {lastMenstrualPeriod}",
+                "Foi em {lastMenstrualPeriod}",
+                "é {lastMenstrualPeriod}",
+                "{lastMenstrualPeriod}"
+              ]
+            }
+          ],
+          "samples": [
+            "qual será a provável data que meu filho vai nascer",
+            "qual a data que meu bebê vai nascer",
+            "qual vai ser a data que minha filha vai nascer",
+            "qual vai ser a data que meu filho vai nascer",
+            "quando meu filho vai nascer",
+            "quando meu bebê vai nascer",
+            "quando minha filha vai nascer",
+            "quando nascerá minha filha",
+            "quando nascerá meu filho",
+            "quando vai nascer meu bebê",
+            "Qual será a data do parto",
+            "Qual será a data do parto do meu bebe",
+            "Qual será a data do parto da minha bebe",
+            "Qual será a data do parto do meu filho",
+            "Qual será a data do parto da minha filha"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "WeeksToMonths",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "weeks",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.960710632910.1561653011467"
+              },
+              "validations": [
+                {
+                  "type": "isGreaterThan",
+                  "prompt": "Slot.Validation.874874856324.617724965041.1030178927822",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DueDateIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "lastMenstrualPeriod",
+              "type": "AMAZON.DATE",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1489859612276.1173283611859"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ConceptionIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "dueDate",
+              "type": "AMAZON.DATE",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.844539441017.314027857542"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.960710632910.1561653011467",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "De quantas semanas você está grávida?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Você está grávida de quantas semanas?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Vejamos... Quantas semanas você está agora?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.874874856324.617724965041.1030178927822",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Hum... parece cedo demais para calcular o número de meses."
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1489859612276.1173283611859",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Por favor, me diga a data da última menstruação."
+          },
+          {
+            "type": "PlainText",
+            "value": "Vamos ver... Poderia me dizer qual foi a data da sua última menstruação?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.844539441017.314027857542",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual a data provável do parto?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Vejamos.. Qual a provável data do nascimento de seu bebê?"
+          }
+        ]
+      }
+    ]
+  }
+}
